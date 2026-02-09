@@ -11,59 +11,6 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              background: "var(--background)",
-              foreground: "var(--foreground)",
-              primary: {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                500: '#0ea5e9',
-                600: '#0284c7',
-                700: '#0369a1',
-              }
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-              'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-              'scale-in': 'scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              'wiggle': 'wiggle 0.3s ease-in-out infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { transform: 'translateY(30px)', opacity: '0' },
-                '100%': { transform: 'translateY(0)', opacity: '1' },
-              },
-              scaleIn: {
-                 '0%': { transform: 'scale(0.9)', opacity: '0' },
-                 '100%': { transform: 'scale(1)', opacity: '1' }
-              },
-              wiggle: {
-                '0%, 100%': { transform: 'rotate(-2deg)' },
-                '50%': { transform: 'rotate(2deg)' },
-              }
-            },
-            padding: {
-              'safe-bottom': 'env(safe-area-inset-bottom)',
-              // Added 1.5rem to the safe area
-              'safe-top': 'calc(env(safe-area-inset-top) + 1.5rem)',
-            }
-          },
-        },
-      }
-    </script>
     <style>
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -99,32 +46,7 @@
         box-shadow: 0 2px 6px rgba(14, 165, 233, 0.4);
       }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
-    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
-    "xlsx": "https://aistudiocdn.com/xlsx@^0.18.5",
-    "pdfjs-dist/": "https://aistudiocdn.com/pdfjs-dist@^5.4.449/",
-    "dotenv/": "https://aistudiocdn.com/dotenv@^17.2.3/",
-    "express": "https://aistudiocdn.com/express@^5.2.1",
-    "node-telegram-bot-api": "https://aistudiocdn.com/node-telegram-bot-api@^0.66.0",
-    "path": "https://aistudiocdn.com/path@^0.12.7",
-    "fs": "https://aistudiocdn.com/fs@^0.0.1-security",
-    "mongoose": "https://aistudiocdn.com/mongoose@^9.0.1",
-    "url": "https://aistudiocdn.com/url@^0.11.4",
-    "vite": "https://aistudiocdn.com/vite@^7.2.7",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.2",
-    "multer": "https://esm.sh/multer@^2.0.2",
-    "node-fetch": "https://esm.sh/node-fetch@^3.3.2",
-    "form-data": "https://esm.sh/form-data@^4.0.5"
-  }
-}
-</script>
+
 </head>
   <body class="bg-[#f2f4f7] dark:bg-[#0f1115] text-gray-900 dark:text-gray-100 transition-colors duration-300">
     <div id="root">
