@@ -11,6 +11,59 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: "var(--background)",
+              foreground: "var(--foreground)",
+              primary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+              'scale-in': 'scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              'wiggle': 'wiggle 0.3s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              scaleIn: {
+                 '0%': { transform: 'scale(0.9)', opacity: '0' },
+                 '100%': { transform: 'scale(1)', opacity: '1' }
+              },
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-2deg)' },
+                '50%': { transform: 'rotate(2deg)' },
+              }
+            },
+            padding: {
+              'safe-bottom': 'env(safe-area-inset-bottom)',
+              // Added 1.5rem to the safe area
+              'safe-top': 'calc(env(safe-area-inset-top) + 1.5rem)',
+            }
+          },
+        },
+      }
+    </script>
     <style>
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -46,7 +99,36 @@
         box-shadow: 0 2px 6px rgba(14, 165, 233, 0.4);
       }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    // Основные — самые надёжные ссылки на jsdelivr (рекомендую)
+    "react":                    "https://cdn.jsdelivr.net/npm/react@19.0.0-rc-f994737d14-20240522/+esm",
+    "react/jsx-runtime":        "https://cdn.jsdelivr.net/npm/react@19.0.0-rc-f994737d14-20240522/+esm/jsx-runtime.js",
+    "react/jsx-dev-runtime":    "https://cdn.jsdelivr.net/npm/react@19.0.0-rc-f994737d14-20240522/+esm/jsx-dev-runtime.js",
+    "react/":                   "https://cdn.jsdelivr.net/npm/react@19.0.0-rc-f994737d14-20240522/+esm/",
+    "react-dom":                "https://cdn.jsdelivr.net/npm/react-dom@19.0.0-rc-f994737d14-20240522/+esm",
+    "react-dom/client":         "https://cdn.jsdelivr.net/npm/react-dom@19.0.0-rc-f994737d14-20240522/+esm/client.js",
+    "react-dom/":               "https://cdn.jsdelivr.net/npm/react-dom@19.0.0-rc-f994737d14-20240522/+esm/",
+    "react-router-dom":         "https://cdn.jsdelivr.net/npm/react-router-dom@7/+esm",
 
+    // Запасные варианты на esm.run (часто тоже работает, но медленнее / реже)
+    "#react":                   "https://esm.run/react@19",
+    "#react-dom":               "https://esm.run/react-dom@19",
+    "#react-dom/client":        "https://esm.run/react-dom@19/client",
+    "#react-router-dom":        "https://esm.run/react-router-dom@7",
+
+    // Другие пакеты из вашего исходного importmap
+    "uuid":                     "https://cdn.jsdelivr.net/npm/uuid@10/+esm",
+    "xlsx":                     "https://cdn.jsdelivr.net/npm/xlsx@0.18/+esm",
+    "pdfjs-dist/":              "https://cdn.jsdelivr.net/npm/pdfjs-dist@4/+esm/",
+
+    // Если вдруг понадобится (редко, но бывает полезно)
+    "#uuid":                    "https://esm.run/uuid@10",
+    "#xlsx":                    "https://esm.run/xlsx@0.18"
+  }
+}
+</script>
 </head>
   <body class="bg-[#f2f4f7] dark:bg-[#0f1115] text-gray-900 dark:text-gray-100 transition-colors duration-300">
     <div id="root">
